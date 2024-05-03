@@ -1,10 +1,16 @@
+import Layout from "../../components/Layout"
+import ContactMe from '../../components/Contact'
+import Footer from "../../components/Footer"
 
 
 function Contact() {
   return (
-    <div className='bg-red-100'>
-      Contact me
-    </div>
+    <>
+    <Layout>
+      <ContactMe />
+    </Layout>
+    <Footer/>
+    </>
   )
 }
 

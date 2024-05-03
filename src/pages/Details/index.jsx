@@ -1,9 +1,18 @@
+import Layout from '../../components/Layout'
+import ProductDetail from '../../components/ProductDetail'
+import Footer from '../../components/Footer'
+
 function Details() {
     return (
-      <div className='bg-red-100'>
-        Details
-      </div>
+      <>
+        <Layout>
+          <ProductDetail/>
+        </Layout>
+      
+        <Footer/>
+      </>
+      
     )
   }
 
-  export {Details}
+  export default Details
