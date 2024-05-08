@@ -8,20 +8,18 @@ import tiktokIcon from '../../assets/tik-tok.png'
 const Footer = () => {
 
     return (
-        <section className='flex flex-col pb-1 pt-4 px-5  primary-color mt-8  mb-2  rounded-lg border-fotter' >
-            <div className='grid grid-cols-2 gap-2 items-center justify-center mx-5 pb-5 border-b-4 border-g'>
-                <div className='flex flex-col items-center pr-12 pl-80 justify-center'>
+        <section className='flex flex-col pb-1 pt-4 px-2 sm:px-5  primary-color mt-8  mb-2  rounded-lg border-fotter' >
+            <div className='grid sm:grid-cols-2 gap-2 items-center justify-center mx-5 pb-5 border-b-4 border-g'>
+                <div className='flex flex-col items-center  justify-center'>
                     <figure className=' items-center justify-center'>
                         <img src={logo} alt='logo' width={'100px'} height={'100px'}/>
                     </figure>
-                    <h3 className=' font-bold text-xl pb-2'>Ale Sport</h3>
-                    <h4 className=' font-medium text-center text-base italic pb-2'>Ropa deportiva para tu mejor versión</h4>
+                    <p className=' font-bold text-xl pb-2'>Ale Sport</p>
+                    <p className=' font-medium text-center text-base italic pb-2'>Ropa deportiva para tu mejor versión</p>
                 </div>
-                <div className='flex flex-col items-center justify-center px-12 pb-2'>
-                    <article className=' text-center italic'>
-                       {` "El mejor momento para plantar un árbol era hace 20 años. El segundo mejor momento es ahora." (Proverbio chino)`}
-                    </article>
-                </div>
+                <article className='flex flex-col items-center justify-center px-4 sm:px-12 pb-2 text-center italic'>
+                    {` "El mejor momento para plantar un árbol era hace 20 años. El segundo mejor momento es ahora." (Proverbio chino)`}
+                </article>
             </div>
             <div className='flex flex-col items-center  pt-3 pb-1'>
                 <div className='flex flex-row gap-5  '>

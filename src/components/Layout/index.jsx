@@ -8,7 +8,7 @@ const Layout = ({children}) => {
       
 
     return (
-        <div className='flex flex-col items-center mt-20 bg-body mr-24 ml-24 rounded-xl max-h-max py-3'>
+        <div className='flex flex-col items-center mt-20 bg-body mx-2 sm:mx-10 md:mx-14 lg:mx-16 xl:mx-24 rounded-xl  max-h-max py-3'>
              {children}
         </div>
     )

@@ -128,7 +128,7 @@ const NavBar = () => {
                     </NavLink>
                 </li> */}
             </ul>
-            <ul className='hidden sm:flex justify-end items-center w-auto  italic'>
+            <ul className='hidden sm:flex justify-end items-center w-auto sm:text-sm  md:text-xl italic'>
                 <li>
                     Ropa deportiva
                 </li>
