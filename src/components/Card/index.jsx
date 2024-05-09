@@ -10,6 +10,11 @@ const Card = (data) => {
         console.log('card product', product)
         console.log('carproduct', context.productDetail)
     }
+
+    const scroll = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     return (
 
         <div className=' flex justify-end bg-card w-64 h-72 border-solid cursor-pointer z-10' >
@@ -22,7 +27,11 @@ const Card = (data) => {
             <Link className=' z-10 flex flex-col justify-center items-center h-full w-full ' to={'/details'}
                 
             >
-                <div className='  h-full w-full' onClick={() => showProduct(data.data)}>
+                <div className='  h-full w-full' 
+                    onClick={() => {
+                        showProduct(data.data)
+                        scroll()
+                    }}>
                     <figure className='relative  mb-1 w-full h-4/5'>
                         <span className='absolute bottom-0 left-0 bg-white/60 rounded-lg ml-2 mb-2 px-1 py-0'>{data.data.category.name}</span>
                         <img src={data.data.images[0]} alt={data.data.title} className=' h-full w-full object-cover  p-1 rounded-lg' />

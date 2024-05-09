@@ -11,17 +11,16 @@ const ProductDetail = () => {
 
     return (
         
-        <section className='flex flex-col  w-full h-full  px-8  '>
+        <section className='flex flex-col  w-full h-full  px-2 sm:px-8  '>
             <p className='flex justify-center font-medium text-3xl secondary-color'>Detalles</p>
-            <picture>
-                <img src="" alt="" />
-            </picture>
-            <div className='flex flex-row justify-around gap-5  mt-2'>
+            <div className='grid md:grid-cols-2 justify-around  gap-12 mt-2'>
                 {/* foto */}
-                <div className='flex flex-col w-96 h-[544px] justify-center items-center  border border-t-color rounded-lg'>
-                    <picture className='w-full h-full'>
-                        <img className=' w-96 h-5/6  object-cover rounded-2xl py-3 px-3 '  src={selectImage} alt={context.productDetail.title} />
-                        <div className='grid grid-cols-5 gap-4 w-96 h-20  px-3 '>
+                <div className='flex flex-col w-full  h-[544px] justify-center items-center  border border-t-color rounded-lg'>
+                    <picture className='flex flex-col justify-center items-center w-full h-full'>
+                        <img className=' sm:w-96 h-5/6  object-cover rounded-2xl py-2 px-2 '  
+                            src={selectImage} 
+                            alt={context.productDetail.title} />
+                        <div className={`grid grid-cols-4 justify-center items-center gap-4  h-20  px-3`} >
                             {
                                 context.productDetail.images.map( (image,index) => (
                                     
@@ -44,8 +43,8 @@ const ProductDetail = () => {
                     <span>⭐⭐⭐⭐⭐</span> */}
                 </div>
                 {/* contenido */}
-                <div className=' justify-end w-full py-2 px-10 border-t-color rounded-lg'>
-                    <div className='flex flex-row gap-32 justify-between font-bold text-4xl pb-2 border-b-4  border-gray-900  border-detail primary-color'>
+                <div className=' justify-end  py-2 px-10 border-t-color rounded-lg'>
+                    <div className='flex flex-row gap-2 justify-between font-semibold text-3xl md:font-medium md:text-2xl lg:font-bold lg:text-4xl pb-2 border-b-4  border-gray-900  border-detail primary-color'>
                         <p>{context.productDetail.title}</p>                        
                         <p>${context.productDetail.price}</p>
                     </div>
@@ -55,7 +54,7 @@ const ProductDetail = () => {
                     <p className=' font-normal text-lg px-2 py-4 border border-t-color rounded-md'> {context.productDetail.category.name}</p>
                     
                     <div className='flex justify-center items-center mt-10'>
-                        <button className=' w-64 h-20 bg-t-color border-s-color primary-color font-semibold text-2xl px-6 py-3 rounded-xl btn-contact'>
+                        <button className='  h-20 bg-t-color border-s-color primary-color font-semibold text-2xl px-3 py-3 rounded-xl btn-contact'>
                             <a href={`https://api.whatsapp.com/send?phone=+573163656084&text=${context.productDetail.title} holadarwin`} target='blank'>Enviar Mensaje</a></button>
                        {/*  <a href="intent://send/+573163656084#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end">Enviar Mensaje</a> */}
                    {/*      <a href="https://api.whatsapp.com/send?phone=+573163656084&text=holadarwin">Enviar Mensaje</a> */}
