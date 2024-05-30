@@ -65,6 +65,10 @@
   border: solid 1px #f4edf0;
 }
 
+.border-t-color:focus {
+  border: solid 2px #e7d5d9;
+}
+
 .border-fotter {
   border-top: 2px solid  #c99ba0de;
   border-left: 2px solid  #c99ba0e3;
@@ -98,6 +102,19 @@
   font:bold;
   color: #ffff;
   background-color: #c08b93c5;
+}
+
+.btn-eliminar:hover {
+  font:bold;
+  color: #ffffff;
+  background-color: #C08B93;
+}
+
+.btn-editar:hover {
+  border: solid 1px #C08B93 ;
+  font:bold;
+  color: #C08B93;
+  background-color: #f4edf0;
 }
 
 .navHeight {
@@ -169,4 +186,5 @@
   padding-left: 8px;
   border-radius: 8px;
 }
+
 

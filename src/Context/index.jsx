@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types'
 import products from "../database/products/productos";
 
+
 export const ShoppingCartContext = createContext()
 
 
@@ -22,6 +23,9 @@ export const ShoppingCartProvider = ( { children } ) => {
     // searchByTitle
     const [searchByTitle, setSearchByTitle] = useState(null)
     console.log('seacrh', searchByTitle)
+
+    //show product modal
+    const [isProductModalOn, setIsProductModalOn] = useState(false)
 
     const [searchByCategory, setSearchByCategory] = useState(null)
 
@@ -59,13 +63,7 @@ export const ShoppingCartProvider = ( { children } ) => {
 
     },[items,searchByTitle,searchByCategory])
 
-    // search by category   
 
-    // limpiador
-/*     useEffect (() => {
-        if(searchByTitle == null) return setSearchByTitle(null)
-        if(searchByCategory == null) return setSearchByCategory(null)
-    },[searchByTitle,searchByCategory]) */
 
 
 
@@ -83,7 +81,9 @@ export const ShoppingCartProvider = ( { children } ) => {
             filteredItems,
             setFilteredItems,
             searchByCategory,
-            setSearchByCategory
+            setSearchByCategory,
+            isProductModalOn,
+            setIsProductModalOn,
         }}>
             { children }
         </ShoppingCartContext.Provider>

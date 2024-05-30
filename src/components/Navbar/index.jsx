@@ -3,10 +3,13 @@ import { useContext, useState } from 'react'
 import { ShoppingCartContext } from '../../Context'
 import logo from '../../assets/Logo.png'
 import burgerMenu from '../../assets/burger-menu.png'
+/* import downArrow from '../../assets/down-arrow.png' */
 
 const NavBar = () => {
 
     const context = useContext(ShoppingCartContext)
+    const [isMenuActive, setIsMenuActive] = useState(false)
+    const [isCategoryActive, setIsCategoryActive] = useState(false)
 
     const activeStyle = 'underline underline-offset-4 primary-color sm:font-semibold  font-medium'
 
@@ -14,12 +17,8 @@ const NavBar = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    const pantallaT = screen.width
-    const pantalla = window.innerWidth
-    console.log('Tpantalla ',pantallaT,' |  patalla ', pantalla )
-    /* let isMenuActive = false */
-    const [isMenuActive, setIsMenuActive] = useState(false)
-    const [isCategoryActive, setIsCategoryActive] = useState(false)
+
+
 
     return (
         <nav className='flex justify-center sm:justify-between items-center  fixed z-[11] top-0 px-3 sm:px-5 w-full text-xl font-extraligth font-serif primary-color bg-navbar h-[72px]   rounded-xl border-b-8 border-white box-border'>
@@ -103,7 +102,10 @@ const NavBar = () => {
                     </NavLink>
                 </li>
             </ul>
-            <figure className='flex absolute left-2 sm:hidden' onTouchStart={() => setIsMenuActive (isMenuActive ? false :true)}>
+            <figure 
+                className='flex absolute left-2 sm:hidden' 
+                onTouchStart={() => setIsMenuActive (isMenuActive ? false :true)}
+                onClick={() => setIsMenuActive( isMenuActive ? false : true)}>
                 <img  src={burgerMenu} alt='burger-menu' width={'56px'} height={'56px'}  />
             </figure>
             <ul >
@@ -128,10 +130,16 @@ const NavBar = () => {
                     </NavLink>
                 </li> */}
             </ul>
-            <ul className='hidden sm:flex justify-end items-center w-auto sm:text-sm  md:text-xl italic'>
+            <ul className='hidden sm:flex justify-end items-center w-auto gap-2 sm:text-sm  md:text-xl italic'>
                 <li>
                     Ropa deportiva
                 </li>
+               {/*  <li className='dropdown'>
+                    <img className=' cursor-pointer ' src={downArrow} alt="down arrow" width={'20px'} height={'20px'}/>
+                    <div className='dropdown-content'>
+                        <a className='' href="https://www.flaticon.com/free-icon/down-arrow_467264?related_id=271210&origin=search">Administrar</a>
+                    </div>
+                </li> */}
 {/*                 <li className='flex ml-4 '>
                     <span>🛒</span>
                     <p className=' absolute top-0 right-0 mr-2'>{context.count}</p>

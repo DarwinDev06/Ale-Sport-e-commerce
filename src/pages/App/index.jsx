@@ -5,6 +5,7 @@ import Contact from '../Contact'
 import NotFound from '../NotFound'
 import Details  from '../Details'
 import NavBar from '../../components/Navbar'
+import Admin from '../Admin'
 import {ShoppingCartProvider}  from '../../Context'
 
 import './App.css'
@@ -19,6 +20,7 @@ const AppRoutes = () => {
       { path: '/accesorios',  element: <Home filter={'Accesorios'}/> },
       { path: '/details', element: <Details /> },
       { path: '/contact', element: <Contact /> },
+      { path: '/admin', element: <Admin/> },
       { path: '/*', element: <NotFound /> }
     ]
   )

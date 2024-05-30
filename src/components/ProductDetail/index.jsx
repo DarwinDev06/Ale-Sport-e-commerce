@@ -54,7 +54,7 @@ const ProductDetail = () => {
                     <p className=' font-normal text-lg px-2 py-4 border border-t-color rounded-md'> {context.productDetail.category.name}</p>
                     
                     <div className='flex justify-center items-center mt-10'>
-                        <button className='  h-20 bg-t-color border-s-color primary-color font-semibold text-2xl px-3 py-3 rounded-xl btn-contact'>
+                        <button className='  h-20 bg-q-color border-s-color primary-color hover:scale-110 font-semibold text-2xl px-3 py-3 rounded-xl btn-contact'>
                             <a href={`https://api.whatsapp.com/send?phone=+573163656084&text=${context.productDetail.title} holadarwin`} target='blank'>Enviar Mensaje</a></button>
                        {/*  <a href="intent://send/+573163656084#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end">Enviar Mensaje</a> */}
                    {/*      <a href="https://api.whatsapp.com/send?phone=+573163656084&text=holadarwin">Enviar Mensaje</a> */}
