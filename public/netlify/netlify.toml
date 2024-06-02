@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/admin"
   to = "https://ale-sport.netlify.app/admin"
-  status = 200
+  status = 301
   force = true
   
