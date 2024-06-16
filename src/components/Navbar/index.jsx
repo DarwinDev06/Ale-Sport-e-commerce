@@ -2,13 +2,15 @@ import { NavLink } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { ShoppingCartContext } from '../../Context'
 import logo from '../../assets/Logo.png'
-import burgerMenu from '../../assets/burger-menu.png'
+import menuIcon from '../../assets/menu-icon.png'
+
 /* import downArrow from '../../assets/down-arrow.png' */
 
 const NavBar = () => {
 
     const context = useContext(ShoppingCartContext)
-    const [isMenuActive, setIsMenuActive] = useState(false)
+    /* const [isMenuActive, setIsMenuActive] = useState(false) */
+
     const [isCategoryActive, setIsCategoryActive] = useState(false)
 
     const activeStyle = 'underline underline-offset-4 primary-color sm:font-semibold  font-medium'
@@ -22,7 +24,7 @@ const NavBar = () => {
 
     return (
         <nav className='flex justify-center sm:justify-between items-center  fixed z-[11] top-0 px-3 sm:px-5 w-full text-xl font-extraligth font-serif primary-color bg-navbar h-[72px]   rounded-xl border-b-8 border-white box-border'>
-            <ul className={` ${isMenuActive ? 'nav-mobile' : 'hidden'}  sm:flex sm:items-center sm:gap-3 sm:w-auto `}>
+            <ul className={` ${context.isMenuActive ? 'nav-mobile' : 'hidden'}  sm:flex sm:items-center sm:gap-3 sm:w-auto `}>
                 <li >
                     <NavLink 
                         to={'/'}
@@ -32,7 +34,7 @@ const NavBar = () => {
                         onClick={() => {
                             context.setSearchByCategory(null)
                             context.setSearchByTitle(null)
-                            setIsMenuActive(false)
+                            context.setIsMenuActive(false)
                             setIsCategoryActive(false)
                             console.log(context.searchByTitle)
                             scroll()
@@ -48,7 +50,7 @@ const NavBar = () => {
                         <NavLink 
                             onClick={() => {
                                 context.setSearchByCategory('Ropa deportiva')
-                                setIsMenuActive(false)
+                                context.setIsMenuActive(false)
                                 
                                 scroll()
                             }} 
@@ -62,7 +64,7 @@ const NavBar = () => {
                         <NavLink 
                             onClick={() => {
                                 context.setSearchByCategory('medias')
-                                setIsMenuActive(false)
+                                context.setIsMenuActive(false)
                                 
                                 scroll()
                             }} 
@@ -75,7 +77,7 @@ const NavBar = () => {
                         <NavLink 
                             onClick={() => {
                                 context.setSearchByCategory('Accesorios')
-                                setIsMenuActive(false)
+                                context.setIsMenuActive(false)
                                 
                                 scroll()
                             }} 
@@ -90,7 +92,7 @@ const NavBar = () => {
                 <li>
                     <NavLink 
                         onClick={()=>{ 
-                            setIsMenuActive(false)
+                            context.setIsMenuActive(false)
                             setIsCategoryActive(false)
                             scroll()
                         }}
@@ -103,10 +105,11 @@ const NavBar = () => {
                 </li>
             </ul>
             <figure 
-                className='flex absolute left-2 sm:hidden' 
-                onTouchStart={() => setIsMenuActive (isMenuActive ? false :true)}
-                onClick={() => setIsMenuActive( isMenuActive ? false : true)}>
-                <img  src={burgerMenu} alt='burger-menu' width={'56px'} height={'56px'}  />
+                className='flex absolute left-2 sm:hidden px-1 py-1' 
+                
+                onTouchStart={() => context.setIsMenuActive (context.isMenuActive ? false :true)}
+                /* onClick={() => setIsMenuActive( isMenuActive ? false : true)} */>
+                <img  src={menuIcon} alt='burger-menu' width={'40px'} height={'40px'}  />
             </figure>
             <ul >
                 <li >
@@ -116,7 +119,7 @@ const NavBar = () => {
                             scroll()
                             context.setSearchByCategory(null)
                             context.setSearchByTitle(null)
-                            setIsMenuActive(false)
+                            context.setIsMenuActive(false)
                             setIsCategoryActive(false)
                         }}
                         >

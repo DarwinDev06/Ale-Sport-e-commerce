@@ -175,12 +175,13 @@
   left: 0;
   top: 66px;
   padding-top: 5px;
+  padding-bottom: 30px;
   font-size: smaller;
   align-items: normal;
   background: #f4edf0;
   border: 1px solid;
   width: 50%;
-  height: 500px;
+  height: auto;
   z-index: 50;
   padding-left: 8px;
   border-radius: 8px;

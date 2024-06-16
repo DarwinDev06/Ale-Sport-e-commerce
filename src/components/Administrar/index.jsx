@@ -92,7 +92,11 @@ const Administrar = () => {
     }
 
     return (
-       <div className={`flex flex-col w-full justify-center items-center`}>
+        <>
+        <div>
+            <p className="primary-color font-bold text-xl text-center">Pagina no encontrada</p>
+        </div>
+        <div className={`hidden sm:flex flex-col w-full justify-center items-center`}>
         
             {/* Login */}
             <section className={`${ isLogin ? 'hidden' : 'flex'} flex-col w-2/5`}>
@@ -132,6 +136,7 @@ const Administrar = () => {
                 
             </section>
        </div>
+       </>
     )
 }
 

@@ -20,12 +20,19 @@ export const ShoppingCartProvider = ( { children } ) => {
     const [items,setItems] = useState(products)
     const [filteredItems, setFilteredItems] = useState(null)
 
+    //show product modal
+    const [isProductModalOn, setIsProductModalOn] = useState(false)
+
+    //show menu on mobile
+    const [isMenuActive, setIsMenuActive] = useState(false)
+
+
     // searchByTitle
     const [searchByTitle, setSearchByTitle] = useState(null)
     console.log('seacrh', searchByTitle)
 
-    //show product modal
-    const [isProductModalOn, setIsProductModalOn] = useState(false)
+
+
 
     const [searchByCategory, setSearchByCategory] = useState(null)
 
@@ -84,6 +91,8 @@ export const ShoppingCartProvider = ( { children } ) => {
             setSearchByCategory,
             isProductModalOn,
             setIsProductModalOn,
+            isMenuActive,
+            setIsMenuActive
         }}>
             { children }
         </ShoppingCartContext.Provider>

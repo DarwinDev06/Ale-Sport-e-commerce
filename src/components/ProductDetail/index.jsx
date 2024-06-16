@@ -5,8 +5,15 @@ import { ShoppingCartContext } from '../../Context'
 const ProductDetail = () => {
 
     const context = useContext(ShoppingCartContext)
-    const [selectImage,setSelectImage] = useState(context.productDetail.images[0])
+    
+    // validando si existe un producto seleccionado
+    if(Object.keys(context.productDetail).length === 0){
 
+        window.location.replace("http://localhost:5173/")
+    } 
+
+    const [selectImage,setSelectImage] = useState(context.productDetail.images[0])
+    const detailText = `Buen dia, Estoy interesad@ en este producto,<< *${context.productDetail.title.toUpperCase()} <> $${context.productDetail.price}* >>, Me confirmas disponibilidad, quedo atent@ Muchas gracias.`
     
 
     return (
@@ -46,16 +53,16 @@ const ProductDetail = () => {
                 <div className=' justify-end  py-2 px-10 border-t-color rounded-lg'>
                     <div className='flex flex-row gap-2 justify-between font-semibold text-3xl md:font-medium md:text-2xl lg:font-bold lg:text-4xl pb-2 border-b-4  border-gray-900  border-detail primary-color'>
                         <p>{context.productDetail.title}</p>                        
-                        <p>${context.productDetail.price}</p>
+                        <p className='flex flex-row'>${context.productDetail.price}</p>
                     </div>
-                    <p className='mt-4 font-semibold text-xl primary-color '>Descripcion</p>
+                    <p className='mt-4 font-semibold text-xl primary-color pl-2'>Descripcion</p>
                     <p className='font-normal text-lg px-2 py-4 border border-t-color rounded-md  h-40 bg-s-color/60'>{context.productDetail.description}</p>
-                    <p className='mt-4 font-semibold text-xl secondary-color '>Categoria</p>
+                    <p className='mt-4 font-semibold text-xl secondary-color pl-2'>Categoria</p>
                     <p className=' font-normal text-lg px-2 py-4 border border-t-color rounded-md'> {context.productDetail.category.name}</p>
                     
                     <div className='flex justify-center items-center mt-10'>
                         <button className='  h-20 bg-q-color border-s-color primary-color hover:scale-110 font-semibold text-2xl px-3 py-3 rounded-xl btn-contact'>
-                            <a href={`https://api.whatsapp.com/send?phone=+573163656084&text=${context.productDetail.title} holadarwin`} target='blank'>Enviar Mensaje</a></button>
+                            <a href={`https://api.whatsapp.com/send?phone=+573163656084&text=${detailText} `} target='blank'>Consultar disponibilidad</a></button>
                        {/*  <a href="intent://send/+573163656084#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end">Enviar Mensaje</a> */}
                    {/*      <a href="https://api.whatsapp.com/send?phone=+573163656084&text=holadarwin">Enviar Mensaje</a> */}
                     </div>
