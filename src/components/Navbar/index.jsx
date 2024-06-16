@@ -124,7 +124,7 @@ const NavBar = () => {
                         }}
                         >
                             <img src={logo} alt="logo" width={'56px'} height={'56px'} />
-                            <p >Ale Sport</p>
+                            <p translate='no'>Ale Sport</p>
                     </NavLink>
                 </li>
 {/*                 <li className='text-3xl font-bold italic'>
