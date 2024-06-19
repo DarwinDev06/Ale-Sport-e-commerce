@@ -1,4 +1,4 @@
-
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import whatsappIcon from '../../assets/whatsapp.png'
 import instagramIcon from '../../assets/instagram.png'
 import facebookIcon from '../../assets/facebook.png'
@@ -64,7 +64,7 @@ const ContactMe = () => {
                         </div>
                         <p className=' primary-color font-semibold text-center text-xl mt-5'>Contáctanos</p>
                         <div className='flex flex-col sm:flex-row sm:w-full items-center sm:justify-center mt-5 gap-3'>
-                            <a className='flex flex-row  max-[639px]:w-full group items-center   mx-2 hover:scale-110' href="https://www.whatsapp.com/?lang=es" target="_blank" rel="noopener noreferrer">
+                            <a className='flex flex-row  max-[639px]:w-full group items-center   mx-2 hover:scale-110' href="https://api.whatsapp.com/send?phone=+573052551897&text=Hola Aleja sport, estoy interesad@ en tus productos..." target="_blank" rel="noopener noreferrer">
                                 <figure>
                                     <img className=' object-fill ' src={whatsappIcon} alt='whatsappIcon' width={'30px'} height={'30px'} />
                                 </figure>
@@ -94,7 +94,7 @@ const ContactMe = () => {
                         </div>
                     <figure className='flex flex-col mt-10'>
                         <span className='primary-color text-center text-xl font-semibold'>Información medios de pago</span>
-                        <img className='border object-cover mb-2 mt-2 rounded-lg' src={mediosPagos} alt="medios de pagos" width={'300px'} height={'400px'}/>
+                        <LazyLoadImage className='border object-cover mb-2 mt-2 rounded-lg' src={mediosPagos} alt="medios de pagos" width={'300px'} height={'400px'}/>
                     </figure>
 
                 </section>

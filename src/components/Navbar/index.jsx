@@ -59,7 +59,7 @@ const NavBar = () => {
                             }
                             
                             to={'/ropa-deportiva/#'} 
-                            > Ropa deportiva
+                            > Ropa deportista
                         </NavLink>
                         <NavLink 
                             onClick={() => {

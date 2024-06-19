@@ -1,11 +1,23 @@
-import { useContext, useEffect } from "react"
+import { useContext, useEffect,Suspense,lazy} from "react"
 import { ShoppingCartContext } from "../../Context"
-import Layout from "../../components/Layout"
+/* import Layout from "../../components/Layout" 
 import Card from "../../components/Card"
+import Footer from "../../components/Footer" */
+import Loading from '../../components/Loading'
 import logo from '../../assets/Logo.png'
-import Footer from "../../components/Footer"
+
+const delayImport = (importFunc, delay) => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(importFunc());
+    }, delay);
+  });
+};
 
 
+const Layout = lazy(()=>import("../../components/Layout" )) 
+const Card = lazy(()=> import("../../components/Card")) 
+const Footer = lazy(()=> import("../../components/Footer")) 
 
 function Home(children) {
   
@@ -64,7 +76,8 @@ function Home(children) {
 
   return (
     <>
-      <Layout >
+    <Suspense fallback={<Loading/>}>
+           <Layout >
         
         <div className='flex justify-center items-center w-80 py-3 snap-normal '>
             <h1 className='font-semibold text-xl secondary-color'>{titleHome()}</h1>
@@ -78,7 +91,10 @@ function Home(children) {
             {RenderView()}
         </div>
       </Layout>
+
       <Footer />
+      </Suspense>
+ 
     </>
 
   )

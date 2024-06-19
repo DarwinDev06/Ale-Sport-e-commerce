@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { ShoppingCartContext } from '../../Context'
-
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 const ProductDetail = () => {
 
@@ -13,7 +13,7 @@ const ProductDetail = () => {
     } 
 
     const [selectImage,setSelectImage] = useState(context.productDetail.images[0])
-    const detailText = `Buen dia, Estoy interesad@ en este producto,<< *${context.productDetail.title.toUpperCase()} <> $${context.productDetail.price}* >>, Me confirmas disponibilidad, quedo atent@ Muchas gracias.`
+    const detailText = `Buen dia Aleja Sport, Estoy interesad@ en este producto:,<< *${context.productDetail.title.toUpperCase()} <> $${context.productDetail.price}* >>, Me confirmas disponibilidad, quedo atent@ Muchas gracias.`
     
 
     return (
@@ -24,14 +24,14 @@ const ProductDetail = () => {
                 {/* foto */}
                 <div className='flex flex-col w-full  h-[544px] justify-center items-center  border border-t-color rounded-lg'>
                     <picture className='flex flex-col justify-center items-center w-full h-full'>
-                        <img className=' sm:w-96 h-5/6  object-cover rounded-2xl py-2 px-2 '  
+                        <LazyLoadImage className=' sm:w-96 h-5/6  object-cover rounded-2xl py-2 px-2 '  
                             src={selectImage} 
                             alt={context.productDetail.title} />
                         <div className={`grid grid-cols-4 justify-center items-center gap-4  h-20  px-3`} >
                             {
                                 context.productDetail.images.map( (image,index) => (
                                     
-                                    <img 
+                                    <LazyLoadImage 
                                         key={index}
                                         className='w-20 h-20 object-cover rounded-lg cursor-pointer active:border  ' 
                                         src={image} 
@@ -62,7 +62,7 @@ const ProductDetail = () => {
                     
                     <div className='flex justify-center items-center mt-10'>
                         <button className='  h-20 bg-q-color border-s-color primary-color hover:scale-110 font-semibold text-2xl px-3 py-3 rounded-xl btn-contact'>
-                            <a href={`https://api.whatsapp.com/send?phone=+573163656084&text=${detailText} `} target='blank'>Consultar disponibilidad</a></button>
+                            <a href={`https://api.whatsapp.com/send?phone=+573052551897&text=${detailText} `} target='blank'>Consultar disponibilidad</a></button>
                        {/*  <a href="intent://send/+573163656084#Intent;scheme=smsto;package=com.whatsapp;action=android.intent.action.SENDTO;end">Enviar Mensaje</a> */}
                    {/*      <a href="https://api.whatsapp.com/send?phone=+573163656084&text=holadarwin">Enviar Mensaje</a> */}
                     </div>
